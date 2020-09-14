@@ -6,17 +6,17 @@ import java.util.TreeSet;
 public class Video {
 	
 	int id;
-	String url, títol;
+	String url, title;
 	SortedSet<String> tags = new TreeSet<String>();
-	int usuariId;
+	int userId;
 	
 	private static int countIdVideo = 1;
 
-	public Video(String url, String títol, SortedSet<String> tags, Usuari usuari) {
+	public Video(String url, String title, SortedSet<String> tags, int userId) {
 		this.url = url;
-		this.títol = títol;
+		this.title = title;
 		this.tags = tags;
-		usuariId = usuari.getId();
+		this.userId = userId;
 
 		id = countIdVideo;
 		countIdVideo++;
@@ -27,8 +27,8 @@ public class Video {
 		return id;
 	}
 	
-	public int getUsuariId() {
-		return usuariId;
+	public int getUserId() {
+		return userId;
 	}
 	
 	public String getUrl() {
@@ -39,12 +39,12 @@ public class Video {
 		this.url = url;
 	}
 
-	public String getTítol() {
-		return títol;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTítol(String títol) {
-		this.títol = títol;
+	public void setTitle(String títol) {
+		this.title = títol;
 	}
 
 	public SortedSet<String> getTags() {
