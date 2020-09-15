@@ -3,6 +3,13 @@ package com.crud.domain;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+/**
+ * class that has a built-in counter to generate ID automatically,
+ * has a base of url to add to what is added by the user,
+ * stores the tags in SortedSet, to be unique and ordered,
+ * @author faunoguazina
+ *
+ */
 public class Video {
 	
 	int id;

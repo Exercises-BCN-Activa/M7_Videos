@@ -4,6 +4,12 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import javax.swing.JOptionPane;
 
+/**
+ * utility class to help controllers to relate to 
+ * the user and also facilitate inputs and handling inputs
+ * @author faunoguazina
+ *
+ */
 public class Inputs { 
 	
 	/**
@@ -105,6 +111,13 @@ public class Inputs {
 	    return titleCase.toString();
 	}
 	
+	/**
+	 * converts the input of tag strings into a list
+	 * if the string has more than one word separated by comma plus space, 
+	 * uses the split method to convert each word into a tag and then adds the list to be returned
+	 * @param input user input for the tags
+	 * @return SortedSet of Strings
+	 */
 	public static SortedSet<String> stringToSortedSet(String input) {
 		SortedSet<String> list = new TreeSet<String>();
 		if (input.indexOf(", ")!=-1) {
@@ -120,6 +133,13 @@ public class Inputs {
 		return list;		
 	}
 	
+	/**
+	 * converts the video title into encoding to fit into a url,
+	 * converts space to underline, dot to number 1, 
+	 * apostrophe to 2, hyphen to 3, letters a to 4.
+	 * @param input user input for the title
+	 * @return String
+	 */
 	public static String returnUrl(String input) {
 		String url;
 		

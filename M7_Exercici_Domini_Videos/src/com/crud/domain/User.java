@@ -2,6 +2,13 @@ package com.crud.domain;
 
 import java.util.Calendar;
 
+/**
+ * class that has a built-in counter to generate ID automatically,
+ * has a name, surname, email and password all in string format, 
+ * has a registration date generated automatically in calendar format.
+ * @author faunoguazina
+ *
+ */
 public class User {
 	
 	int id;
