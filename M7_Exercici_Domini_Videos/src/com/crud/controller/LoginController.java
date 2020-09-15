@@ -1,10 +1,9 @@
 package com.crud.controller;
 
-import com.crud.utilities.Inputs;
-
 import java.util.Iterator;
 import java.util.List;
 
+import com.crud.utilities.Inputs;
 import com.crud.domain.User;
 
 public final class LoginController {
@@ -14,7 +13,7 @@ public final class LoginController {
 	protected LoginController() {}
 	
 	
-	static public void loginUser(List<User> users) {
+	static protected void loginUser(List<User> users) {
 		String email, password;
 		boolean finded = false;
 		boolean verify = false;
@@ -24,9 +23,10 @@ public final class LoginController {
 			email = Inputs.returnString("INICI DE SESSIÓ:\nIntrodueixi el correu electrònic", 2);
 			if (!email.equalsIgnoreCase("NulL")) {
 				while (it.hasNext() && !finded) {
-					if (it.next().getEmail().equalsIgnoreCase(email)) {
+					User use = it.next();
+					if (use.getEmail().equalsIgnoreCase(email)) {
 						finded = true;
-						user = it.next();
+						user = use;
 					}
 				}
 				
@@ -51,11 +51,11 @@ public final class LoginController {
 		}	
 	}
 	
-	static public void logoutUser() {
+	static protected void logoutUser() {
 		user = null;
 	}
 	
-	static public User logedUser() {
+	static protected User logedUser() {
 		return user;
 	}
 

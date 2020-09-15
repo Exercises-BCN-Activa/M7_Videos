@@ -90,5 +90,25 @@ public class UserVideoController {
 		LoginController.logoutUser();
 	}
 	
-
+	public void listMyVideos() {
+		if (LoginController.logedUser()==null) {
+			Inputs.showMessage("L'usuari no ha iniciat la sessió");
+		}
+		else {
+			MyVideosController.listOf(repositVideo.getAllVideos());
+			System.out.println(MyVideosController.getMyVideos());
+			
+		}
+	}
+	
+	
+	//DATABASE TEST
+	public void testeDataBase() throws Exception {		
+		repositUser.addUser(UserVideoFactory.newUser("Fauno", "Guazina", "fauno@guazina.fg", "123qweA@"));
+		repositUser.addUser(UserVideoFactory.newUser("Jose", "Marin", "jose@marin.jm", "123qweA@"));
+		repositVideo.addVideo(UserVideoFactory.newVideo("Teste_1", "Teste 1", Inputs.stringToSortedSet("Teste, Texte"), 2));
+		repositVideo.addVideo(UserVideoFactory.newVideo("Teste_2", "Teste 2", Inputs.stringToSortedSet("Teste, Texte"), 2));
+		repositVideo.addVideo(UserVideoFactory.newVideo("Teste_3", "Teste 3", Inputs.stringToSortedSet("Teste, Texte"), 2));
+		
+	}
 }

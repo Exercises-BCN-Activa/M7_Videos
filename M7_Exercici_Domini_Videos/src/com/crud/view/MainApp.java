@@ -8,12 +8,18 @@ public class MainApp {
 		
 		UserVideoController controller = new UserVideoController();
 		
-		controller.login();
-		controller.createUser();
-		controller.createVideo();
-		controller.login();
-		controller.createVideo();
-		controller.logout();
+		controller.testeDataBase(); //simple data to test
+		controller.login(); //to test when user does not log in
+		controller.listMyVideos(); //to test when user does not log in
+		controller.login(); //EMAIL: jose@marin.jm | PASS: 123qweA@
+		controller.listMyVideos(); //jose's video listing
+		controller.logout(); // logout user Jose
+		controller.createUser(); //create new user
+		controller.createVideo(); //create new video without being logged in
+		controller.login(); //login new user
+		controller.createVideo();  //create new video logged with new user
+		controller.listMyVideos(); //new user's video listing
+		controller.logout(); // logout user New User
 
 	}
 

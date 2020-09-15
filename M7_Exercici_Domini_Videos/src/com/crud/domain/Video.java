@@ -6,14 +6,15 @@ import java.util.TreeSet;
 public class Video {
 	
 	int id;
-	String url, title;
+	String url = "https://stube.cat/";
+	String title;
 	SortedSet<String> tags = new TreeSet<String>();
 	int userId;
 	
 	private static int countIdVideo = 1;
 
 	public Video(String url, String title, SortedSet<String> tags, int userId) {
-		this.url = url;
+		this.url += url;
 		this.title = title;
 		this.tags = tags;
 		this.userId = userId;
@@ -62,4 +63,21 @@ public class Video {
 	public void addTags(SortedSet<String> tags) {
 		this.tags.addAll(tags);
 	}
+
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("\nVIDEO\n");
+		builder.append("Title: ");
+		builder.append(title);
+		builder.append("\nTags: ");
+		builder.append(tags);
+		builder.append("\nURL: ");
+		builder.append(url);
+		builder.append("\n");
+		return builder.toString();
+	}
+	
+	
 }

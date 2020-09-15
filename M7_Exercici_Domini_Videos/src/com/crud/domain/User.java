@@ -72,5 +72,25 @@ public class User {
 		this.password = password;
 	}
 
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("User [id=");
+		builder.append(id);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", surname=");
+		builder.append(surname);
+		builder.append(", password=");
+		builder.append(password);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", registre=");
+		builder.append(registre);
+		builder.append("]");
+		return builder.toString();
+	}
+
 	
 }
